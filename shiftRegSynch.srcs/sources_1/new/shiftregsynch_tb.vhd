@@ -35,8 +35,7 @@ use IEEE.NUMERIC_STD.ALL;
 
 entity shiftregsynch_top is
     port(
-        word_out : out std_logic_vector(31 downto 0);
-        fifo_rd_en_i: in std_logic
+        word_out : out std_logic_vector(31 downto 0)
     );   
 end shiftregsynch_top;
 
@@ -57,22 +56,10 @@ architecture Behavioral of shiftregsynch_top is
     signal word_output_s : std_logic;
     signal cnt_en_s, cnt_rst_s  : std_logic;
     signal cnt_o_s   : std_logic_vector(3 downto 0);
-    
-    -- FIFO signals
-    signal fifo_wr_en_s : std_logic;
-    signal fifo_full_s, fifo_empty_s, fifo_ol_s, fifo_ul_s, fifo_val_s: std_logic;
-    signal rd_en_tst : std_logic:= '0';
+
     
     -- BEGIN COMPONENT DECLARATIONS --
-    component fifo_statemachine is
-        Port (
-            clk_i: in std_logic;
-            rst_i: in std_logic;
-            cnt_o_i: in std_logic_vector(3 downto 0);
-            word_valid_i: in std_logic;
-            fifo_wr_o: out std_logic
-            );
-    end component;
+
     
     component sipo is
         port(
@@ -103,22 +90,7 @@ architecture Behavioral of shiftregsynch_top is
              cnt_o   : out std_logic_vector(3 downto 0)
             );
     end component;
-    
-    COMPONENT fifo_32bit
-      PORT (
-        rst : IN STD_LOGIC;
-        clk : IN STD_LOGIC;
-        din : IN STD_LOGIC_VECTOR(31 DOWNTO 0);
-        wr_en : IN STD_LOGIC;
-        rd_en : IN STD_LOGIC;
-        dout : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
-        full : OUT STD_LOGIC;
-        overflow : OUT STD_LOGIC;
-        empty : OUT STD_LOGIC;
-        valid : OUT STD_LOGIC;
-        underflow : OUT STD_LOGIC
-      );
-    END COMPONENT;
+
         
 begin
     cnt_rst_s <= '1' when (rst_i = '1' ) else '0'; --or comma_s = '1'
@@ -231,32 +203,6 @@ word_pack: process(clk_i)
         
         end if;
     end process;
-            
-    -------- FiFo ---------
-    fifo_fsm: fifo_statemachine
-        port map(
-            clk_i => clk_i,
-            rst_i => rst_i,
-            cnt_o_i => cnt_o_s,
-            word_valid_i => word_output_s,
-            fifo_wr_o => fifo_wr_en_s
-            );
-    
-    data_fifo : fifo_32bit
-          PORT MAP (
-            rst => rst_i,
-            clk => clk_i,
-            din => word_pack_s,
-            wr_en => fifo_wr_en_s,
-            rd_en => rd_en_tst,
-            dout => word_out,
-            full => fifo_full_s,
-            overflow => fifo_ol_s,
-            empty => fifo_empty_s,
-            valid => fifo_val_s,
-            underflow => fifo_ul_s
-          );
-
         
     ---- clock process ----
 clkX1: process
