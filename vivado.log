@@ -1,0 +1,30 @@
+#-----------------------------------------------------------
+# Vivado v2018.2 (64-bit)
+# SW Build 2258646 on Thu Jun 14 20:03:12 MDT 2018
+# IP Build 2256618 on Thu Jun 14 22:10:49 MDT 2018
+# Start of session at: Fri Jul  8 08:38:20 2022
+# Process ID: 4860
+# Current directory: C:/Users/Cyrill/Documents/S6/BA-GULFstream/shiftRegSynch_v1/gulf_eval_sim_v1
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent14924 C:\Users\Cyrill\Documents\S6\BA-GULFstream\shiftRegSynch_v1\gulf_eval_sim_v1\shiftRegSynch.xpr
+# Log file: C:/Users/Cyrill/Documents/S6/BA-GULFstream/shiftRegSynch_v1/gulf_eval_sim_v1/vivado.log
+# Journal file: C:/Users/Cyrill/Documents/S6/BA-GULFstream/shiftRegSynch_v1/gulf_eval_sim_v1\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project C:/Users/Cyrill/Documents/S6/BA-GULFstream/shiftRegSynch_v1/gulf_eval_sim_v1/shiftRegSynch.xpr
+INFO: [Project 1-313] Project file moved from 'C:/Users/Cyrill/Documents/S6/BA-GULFstream/shiftRegSynch' since last save.
+CRITICAL WARNING: [Project 1-311] Could not find the file 'C:/Users/Cyrill/Documents/S6/BA-GULFstream/shiftRegSynch_v1/gulf_eval_sim_v1/shiftRegSynch.srcs/sources_1/new/fifo_statemachine.vhd', nor could it be found using path 'C:/Users/Cyrill/Documents/S6/BA-GULFstream/shiftRegSynch/shiftRegSynch.srcs/sources_1/new/fifo_statemachine.vhd'.
+CRITICAL WARNING: [Project 1-311] Could not find the file 'C:/Users/Cyrill/Documents/S6/BA-GULFstream/shiftRegSynch_v1/gulf_eval_sim_v1/shiftRegSynch.srcs/sources_1/ip/fifo_32bit/fifo_32bit.xci', nor could it be found using path 'C:/Users/Cyrill/Documents/S6/BA-GULFstream/shiftRegSynch/shiftRegSynch.srcs/sources_1/ip/fifo_32bit/fifo_32bit.xci'.
+Scanning sources...
+Finished scanning sources
+WARNING: [Project 1-509] GeneratedRun file for 'fifo_32bit_synth_1' not found
+ERROR: [IP_Flow 19-993] Could not find IP file for IP 'fifo_32bit'.
+CRITICAL WARNING: [IP_Flow 19-5097] Unable to determine VLNV from IP file; verify it has the correct syntax: 
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2018.2/data/ip'.
+open_project: Time (s): cpu = 00:00:18 ; elapsed = 00:00:10 . Memory (MB): peak = 836.223 ; gain = 162.680
+ERROR: [Common 17-39] 'open_project' failed due to earlier errors.
+update_compile_order -fileset sources_1
+export_ip_user_files -of_objects  [get_files C:/Users/Cyrill/Documents/S6/BA-GULFstream/shiftRegSynch_v1/gulf_eval_sim_v1/shiftRegSynch.srcs/sources_1/ip/fifo_32bit/fifo_32bit.xci] -no_script -reset -force -quiet
+remove_files  -fileset fifo_32bit C:/Users/Cyrill/Documents/S6/BA-GULFstream/shiftRegSynch_v1/gulf_eval_sim_v1/shiftRegSynch.srcs/sources_1/ip/fifo_32bit/fifo_32bit.xci
+INFO: [Project 1-386] Moving file 'C:/Users/Cyrill/Documents/S6/BA-GULFstream/shiftRegSynch_v1/gulf_eval_sim_v1/shiftRegSynch.srcs/sources_1/ip/fifo_32bit/fifo_32bit.xci' from fileset 'fifo_32bit' to fileset 'sources_1'.

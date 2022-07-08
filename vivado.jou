@@ -1,0 +1,16 @@
+#-----------------------------------------------------------
+# Vivado v2018.2 (64-bit)
+# SW Build 2258646 on Thu Jun 14 20:03:12 MDT 2018
+# IP Build 2256618 on Thu Jun 14 22:10:49 MDT 2018
+# Start of session at: Fri Jul  8 08:38:20 2022
+# Process ID: 4860
+# Current directory: C:/Users/Cyrill/Documents/S6/BA-GULFstream/shiftRegSynch_v1/gulf_eval_sim_v1
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent14924 C:\Users\Cyrill\Documents\S6\BA-GULFstream\shiftRegSynch_v1\gulf_eval_sim_v1\shiftRegSynch.xpr
+# Log file: C:/Users/Cyrill/Documents/S6/BA-GULFstream/shiftRegSynch_v1/gulf_eval_sim_v1/vivado.log
+# Journal file: C:/Users/Cyrill/Documents/S6/BA-GULFstream/shiftRegSynch_v1/gulf_eval_sim_v1\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project C:/Users/Cyrill/Documents/S6/BA-GULFstream/shiftRegSynch_v1/gulf_eval_sim_v1/shiftRegSynch.xpr
+update_compile_order -fileset sources_1
+export_ip_user_files -of_objects  [get_files C:/Users/Cyrill/Documents/S6/BA-GULFstream/shiftRegSynch_v1/gulf_eval_sim_v1/shiftRegSynch.srcs/sources_1/ip/fifo_32bit/fifo_32bit.xci] -no_script -reset -force -quiet
+remove_files  -fileset fifo_32bit C:/Users/Cyrill/Documents/S6/BA-GULFstream/shiftRegSynch_v1/gulf_eval_sim_v1/shiftRegSynch.srcs/sources_1/ip/fifo_32bit/fifo_32bit.xci
